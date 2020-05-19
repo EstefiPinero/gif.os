@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proyecto gifOS</title>
+    <link rel ="stylesheet" href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap">
+    <link rel ="" href="indexCrear.html">
+    <link rel="stylesheet" type="text/css" href="./styles/sass/main.css">
+    
+    
+</head>
+<body>
+    
+    <!-- HEADER -->
+    <header class="hdLight"> 
+        <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</p>
+    </header>
+        
+        <img src="" id="imgGif" alt="gifOS" >
+
+    <!-- SECCION CREAR GIFOS/ ELEGIR TEMAS -->
+    <div class="main">
+        <div class="title">
+
+            
+                   
+            <!-- crear gifOS -->
+            <div class="buttoms">
+                <button id="create" class="create darkBotones"><a href="indexCrear.html">Crear Gifos</a></button>
+               
+                <!-- elegir temas --> 
+                <div class="contenedorMenu"> 
+                    <div class= "contenedorMenuDesplegado">    
+                        <button id="elegirt" class="elegirt darkBotones">Elegir tema</button>
+
+                        <div id="elegirt2" class="elegirt_arrow darkBotones"><img src="./images/dropdown.svg"></div>
+                    </div>
+                        
+                    <div class= "dropContent">                      
+                        <ul class="listaDrop">
+                            <li class="list" id="sDay"><span>s</span>aylor day</li>
+                            <li class="list" id="sNight">saylor night</li>  
+                        </ul>   
+                    </div>                    
+                </div>
+        
+                <!-- mis guifos-->
+                <a href="" class="misGuifos"><span>M</span>is guifos </a>
+            </div>    
+        </div>  
+
+        
+        <!-- SECCION BUSCADOR -->
+        <div class="buscar" id="divbuscar">
+            <div class="cabecera" id="headBuscar">
+                <p>Buscar</p>
+            </div>
+
+            <form action="#" class="formLight">
+                <div class="form">
+                    <input type="input" name="search" id="explore" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">                    
+                </div>                
+            </form>
+
+            <button  class="botonBuscar">
+                <i class="fa fa-search" aria-hidden="true">Buscar</i>
+            </button>
+
+        </div>
+        <div  class="contRelatedBtn" id="rltBtn">
+            <button class="relatedBtn"><a id="relatedBtn">#Simpsons </a></button>
+            <button class="relatedBtn"><a id="relatedBtn2">#Caidas </a></button>
+            <button class="relatedBtn"><a id="relatedBtn3">#Friends </a></button>
+        </div>
+        <!-- SEARCH RELATED TAGs BUTTONS #BLUE -->
+
+        <div class="relatedTags" id="relatedTags">
+            <!-- <button class="searchRtag" id="primerejemplo"><span>#unejemplo</span></button> -->
+            
+        </div>
+
+        <!-- SECCION SUGERENCIAS DE HOY -->
+        <div class="sugerencias">
+            <div class="_boxHeader">
+                <p>Hoy te sugerimos:</p>
+            </div>
+
+            <div class="divSuge_conte">
+
+            </div>
+        </div>
+    
+        <!-- SECCION TENDENCIAS -->
+        <div class="tendencias">
+            <div class="tenden_boxHeader">
+                <p id="pBoxHeader">Tendencias:</p>
+            </div>
+            
+            <div class="divTenden_conten" id="divTenden_conten">
+                                
+            </div>
+            <div class="divSearch_conten" id="divSearch_conten">
+
+            </div>
+            <div class="divSearch_related" id="divSearch_related">
+                
+            </div>   
+        </div>
+    </div>
+
+
+</body>    
+<script src="./js/apiGiphy.js"></script>
+<script src="./js/xTheme.js"></script>
+<!-- <script src="./js/misGuiFos.js"></script>     -->
+    
+</html>
