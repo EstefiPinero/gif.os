@@ -16,22 +16,22 @@
     </header>
 
     
-        <a href="index.html"><img id="arrowBack" src="./images/arrow.svg"
-                alt="back-botton"></img></a>
-        <img src="images/gifOF_logo.png" id="imgGif" alt="gifOS" >
+        <a href="index.html" id="arrowBack"><img src="./images/arrow.svg"
+            alt="back-botton"></a>
+        <img onclick="location.reload()" src="images/gifOF_logo.png" id="imgGif" alt="gifOS" style="cursor: pointer;">
     <!-- SECCION  -->
    
    <div class="Crear_Guifos">
-        <div class="cont_crear">
+        <div class="cont_crear conteDark">
             
-            <h2 class="titulo_crear">
-                <p class="titulosDeMensaje">Crear Gifos</p>
-            </h2>
+            <div class="titulo_crear headerDark"><p class="titulosDeMensaje"><b>Gifos</b></p></div>
+                
+            
             
             <div class="divInstrucciones">
-                <div class="instrucciones">
+                <div class="instrucciones conteDark">
                     <div class="intro">
-                        <img class="windowImg" src="./images/window img.png" alt="" />
+                        <img class="windowImg" src="./images/windowimg.png" alt="" />
                         <p class="parrafo"><b>Aquí podrás crear tus propios Gifos</b></p>
                     </div>        
                             <p>
@@ -47,39 +47,37 @@
                             </p>
                 </div>
                 <div class="cont_btns">
-                    <button class="btnCancel"><a href="index.html">Cancelar</a></button>
-                    <button class="btnStart" id="btnStart">
+                    <a class="btnCancel" href="index.html">Cancelar</a>
+                    <button class="btnStart btnDark" id="btnStart">
                         Comenzar
                     </button>
                 </div>
             </div>
         </div>
 
-        <div class="cont_record">
-            <div class="check">
-                <div class="checkHeader">
-                    <p class="checkHeader_text">Un Chequeo Antes de Empezar</p>
-                    <img src="images/button3.svg" alt="btnCerrar class="btnCerrar" />
+        <div class="cont_record conteDark">
+            <div class="check conteDark">
+                <div class="checkHeader headerDark">
+                    <p class="checkHeader_text"><b>Un Chequeo Antes de Empezar</b></p>
+                    <img src="images/button3.svg" alt="btnCerrar" class="btnCerrar">
                 </div>
                 <div class="contVideo">
                     <video class="gifContVideo" id="gifCapture"></video>
-                    <img class="gifCreado" src="" id="gifCreado"></img>
-                    <img id="globe_img" src="./images/globe_img.png">
+                    <img class="gifCreado" src="#" alt="" id="gifCreado">
+                    <img id="globe_img" alt="glob" src="./images/globe_img.png">
                     <h2 id="estamosS">Estamos subiendo tu guifo…</h2>
-                    <p id="pTiempoCarga">Tiempo restante:<span>38 años</span>  algunos minutos</p>
-                    <div class="barra_up2">
-                        <div id="up3"></div>
-                        <div id="up4"></div>
-                    </div>
-                    <button id="btnCancelar2"><a href="indexCrear.html">Cancelar</a></button>
+                    <p id="pTiempoCarga">Tiempo restante:<span> 38 años </span>algunos minutos</p>
+                    <div id="progressBar2" class="progress_bar2 btnDark"></div>
+                    <a id="btnCancelar2" href="indexCrear.html">Cancelar</a>
+                    
                 </div>
-                <div class="contRecordBtns">
+                <div class="contRecordBtns conteDark">
                     <div class="contBtnCapturar">
-                        <button class="btn_camara">
+                        <button class="btn_camara btnDark">
                             <img src="./images/camera.svg" alt="" class="camera" />
                         </button>
 
-                        <button class="btnCapturar" id="btnCapturar">
+                        <button class="btnCapturar btnDark" id="btnCapturar">
                             Capturar
                         </button>
                     </div>
@@ -89,46 +87,52 @@
                 </div>
             </div>
         
-            <div class="contPreview">
+            <div class="contPreview conteDark">
                             
-                <div class="barra_carga">
+                <div class="barra_carga conteDark">
 
                 </div>
-            </div>    
-        
+            </div>          
             <!-- <div class="contCarga">
-                <div class="contSubiendo"> -->
-                    <!-- <div class="img_subiendo">
-                        <img id="globe_img" src="./images/globe_img.png">
-                        <div class="barra_up2">
-                            <div id="up3"></div>
-                            <div id="up4"></div>
-                        </div>
-                        <p id="tiempo_carga">Tiempo restante: 38 años algunos minutos</p>
-                    </div>
-                    <button id="btn_cancelar2"><a href="indexCrear.html">Cancelar</a></button> 
-                </div>
+
             </div>--> 
         </div>    
-        <div class="capturaGif" id="capturaGif">
-            <h2 id="guifoCreado">Guifo subido con exito</h2>  
-            <img id="imgSubido" src="" alt="">
+        <div class="capturaGif conteDark" id="capturaGif">
+            <h2 id="guifoCreado" class="headerDark" >
+                Guifo subido con exito
+            </h2>
+            <img id="imgSubido" src="#" alt="imgs">
             <div class="divSubido">
+                <img src="images/button3.svg" alt="btnCerrar" class="btnCerrar" /> 
                 <p class="pguifoCreado"><strong>Guifo creado con exito</strong></p> 
-                <button class="btnCopy">Copiar enlace Guifo</button>
+                <button class="btnCopy">
+                    Copiar Enlace Guifo
+                </button>
+                <input type="text" id="link">
+                <a href="" class="btnDownload" download="gif">
+                    <p>Descargar Guifo</p>
+                </a>
+                <button class="btnListo2 btnDark">
+                    Listo
+                </button>
+                
+                <!-- <button class="btnCopy">Copiar enlace Guifo</button>
                 <button class="btnDownload"><a href="" download="" class="a_download">Descargar Guifo</a></button>
-                <button class="btnListo2">Listo</button>
+                <button class="btnListo2 btnDark">Listo</button> -->
             </div> 
         </div>
         
-        <div class="container_text_my_guifos">
-            <input type="text" class="input_my_guifos" placeholder="Mis Guifos" />
+        <div class="contBoxMisGifos">
+            <p class="pMisGifos" >Mis Guifos</p> 
         </div>
-        <div class="container_my_guifos"></div>   
+        <div class="contMisGifos">
+            <div class="misGifosCreados" ></div>
+        </div>   
     </div>
-
-</body>
-<script src="./js/xTheme.js"></script>
-<script src="./js/misGuiFos.js"></script>
+<script src="./js/temaIndexCrear.js"></script>
+<script src="./js/crearGuiFos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
+</body>
+
+
 </html>
