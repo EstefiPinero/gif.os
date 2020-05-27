@@ -159,7 +159,7 @@ relatedBtn3.addEventListener('click', () => {
 async function results(search) {
     
     try {
-        let gifosApi = `http://api.giphy.com/v1/gifs/search?q=${search}&api_key=${API_KEY}&limit=16`;
+        let gifosApi = `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${API_KEY}&limit=16`;
         let response = await fetch(gifosApi);
         arraySearch = await response.json();
         
