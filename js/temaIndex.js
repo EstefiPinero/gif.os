@@ -33,7 +33,9 @@ let btnVerMas = document.getElementsByClassName("verMas");
 let conte_Gif = document.getElementsByClassName("_conte_Gif");
 let headerDark = document.getElementsByClassName('headerDark')
 let whiteTx = document.getElementsByClassName('whiteTx')
-
+let searchBtn2 = document.getElementsByClassName('botonBuscar')[0]
+let lupa2 = document.getElementById('lupa')
+let valorInput2 = document.getElementById('explore')
 
 if(!localStorage.getItem("dark")){   
     localStorage.setItem("dark",false);
@@ -47,6 +49,7 @@ function cargarTheme() {
         header.classList.replace('hdDark', 'hdLight')
         body.style.backgroundColor = "#FFF4FD";    
         imgLogo.src = "./images/gifOF_logo.png"; 
+        //lupa2.src = "./images/lupa_inactive.svg"
         for(let i = 0; i < darkBotones.length; i++) {
             darkBotones[i].style.backgroundColor= "#F7C9F3"; 
             darkBotones[i].style.color = "#110038";
@@ -57,6 +60,7 @@ function cargarTheme() {
         cabecera.classList.replace('linear', 'cabecera'); 
         buscar.classList.replace('buscarDark', 'buscar')
         form.classList.replace('formDark', 'formLight')
+        //searchBtn2.classList.replace('botonBuscarDark', 'botonBuscar')
         contrelatedBtn.classList.replace('contRelatedBtnDark', 'contRelatedBtn')
         for (i = 0; i < rltBtn.length; i++) {
             rltBtn[i].className = "relatedBtn";
@@ -73,7 +77,19 @@ function cargarTheme() {
         for (let i = 0; i < whiteTx.length; i++) {
             whiteTx[i].style.color = '#110038'
         }
-
+        if (valorInput2.value.trim() !== "") {
+            // Busqueda llena tema claro
+          
+            searchBtn2.color = "#110038"
+            searchBtn2.style.backgroundColor= "#F7C9F3";
+            lupa2.src = "./images/lupa.svg"; 
+        // Busqueda llena tema oscuro
+        } else {
+            searchBtn2.color = "#B4B4B4"
+            searchBtn2.style.backgroundColor="#E6E6E6";
+            lupa2.src ="./images/lupa_inactive.svg";
+        }
+        
 
     // ESTILOS DARK
     }else if(localStorage.getItem("dark") == "false") {
@@ -91,6 +107,7 @@ function cargarTheme() {
         cabecera.classList.replace('cabecera', 'linear');
         buscar.classList.replace('buscar', 'buscarDark')
         form.classList.replace('formLight', 'formDark')
+        //searchBtn2.classList.replace('botonBuscar', 'botonBuscarDark')
         contrelatedBtn.classList.replace('contRelatedBtn', 'contRelatedBtnDark')
         for (i = 0; i < rltBtn.length; i++) {
             rltBtn[i].className = "rltBtnDark";
@@ -107,6 +124,16 @@ function cargarTheme() {
         for (let i = 0; i < whiteTx.length; i++) {
             whiteTx[i].style.color = '#FFFFFF'
         }
+        if (valorInput2.value.trim() !== "") {
+            searchBtn2.color = "#FFFFFF"
+            searchBtn2.style.backgroundColor="#EE3EFE";
+            lupa2.src = "./images/lupa_light.svg";
+        } else {
+            searchBtn2.color = "#8F8F8F"
+            searchBtn2.style.backgroundColor="#B4B4B4";
+            lupa2src = "./images/lupa-2.svg";
+        }
+
     };
 
     },1000)
@@ -131,6 +158,7 @@ function cargarTheme() {
         cabecera.classList.replace('linear', 'cabecera'); 
         buscar.classList.replace('buscarDark', 'buscar')
         form.classList.replace('formDark', 'formLight')
+        //searchBtn2.classList.replace('botonBuscarDark', 'botonBuscar')
         contrelatedBtn.classList.replace('contRelatedBtnDark', 'contRelatedBtn')
         for (i = 0; i < rltBtn.length; i++) {
             rltBtn[i].className = "relatedBtn";
@@ -149,6 +177,18 @@ function cargarTheme() {
         }
         for (let i = 0; i < whiteTx.length; i++) {
             whiteTx[i].style.color = '#110038'
+        }
+        if (valorInput2.value.trim() !== "") {
+            // Busqueda llena tema claro
+          
+            searchBtn2.color = "#110038"
+            searchBtn2.style.backgroundColor= "#F7C9F3";
+            lupa2.src = "./images/lupa.svg"; 
+        // Busqueda llena tema oscuro
+        } else {
+            searchBtn2.color = "#B4B4B4"
+            searchBtn2.style.backgroundColor="#E6E6E6";
+            lupa2.src ="./images/lupa_inactive.svg";
         }
         localStorage.setItem("dark",true);
     }
@@ -172,6 +212,7 @@ function cargarTheme() {
         cabecera.classList.replace('cabecera', 'linear');
         buscar.classList.replace('buscar', 'buscarDark')
         form.classList.replace('formLight', 'formDark')
+        //searchBtn2.classList.replace('botonBuscar', 'botonBuscarDark')
         contrelatedBtn.classList.replace('contRelatedBtn', 'contRelatedBtnDark')
         for (i = 0; i < rltBtn.length; i++) {
             rltBtn[i].className = "rltBtnDark";
@@ -188,7 +229,16 @@ function cargarTheme() {
         for (let i = 0; i < whiteTx.length; i++) {
             whiteTx[i].style.color = '#FFFFFF'
         }
-        
+        if (valorInput2.value.trim() !== "") {
+            searchBtn2.color = "#FFFFFF"
+            searchBtn2.style.backgroundColor="#EE3EFE";
+            lupa2.src = "./images/lupa_light.svg";
+        }
+        else {
+            searchBtn2.color = "#8F8F8F"
+            searchBtn2.style.backgroundColor="#B4B4B4";
+            lupa2.src = "./images/lupa-2.svg";
+        }
         localStorage.setItem("dark",false);
         
     }

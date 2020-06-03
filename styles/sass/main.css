@@ -365,12 +365,10 @@ header p {
 }
 
 #divbuscar .botonBuscar {
-  background: #E6E6E6;
   border: 1px solid #808080;
   -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
   font-size: 16px;
-  color: #B4B4B4;
   letter-spacing: 0;
   line-height: 18px;
   -ms-flex-item-align: end;
@@ -381,9 +379,31 @@ header p {
   margin-top: -50px;
 }
 
-#divbuscar .botonBuscar:hover {
+#divbuscar .botonBuscar:active {
   color: #110038;
   background: #F7C9F3;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+#divbuscar .botonBuscarDark {
+  border: 1px solid #808080;
+  -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 18px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 102px;
+  margin: auto 5px;
+  height: 36px;
+  margin-top: -50px;
+}
+
+#divbuscar .botonBuscarDark:active {
+  background: #EE3EFE;
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;

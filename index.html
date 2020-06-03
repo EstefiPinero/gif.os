@@ -16,7 +16,7 @@
         <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</p>
     </header>
         
-        <img src="/images/gifOF_logo.png" onclick="location.reload()" id="imgGif" alt="gifOS" style="cursor: pointer;" >
+        <img src="./images/gifOF_logo.png" onclick="location.reload()" id="imgGif" alt="gifOS" style="cursor: pointer;" >
 
     <!-- SECCION CREAR GIFOS/ ELEGIR TEMAS -->
     <div class="main">
@@ -59,12 +59,12 @@
 
             <form action="#" class="formLight">
                 <div class="form">
-                    <input autocomplete= "off" type="text" name="search" id="explore" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">                    
+                    <input autocomplete= "off" type="text" onkeyup="actiBtn()" name="search" id="explore" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">                    
                 </div>                
             </form>
 
             
-            <button  class="botonBuscar darkBotones"> <img src="./images/lupa.svg">Buscar</button>
+            <button  class="botonBuscar" disabled="true"><img id="lupa" src="./images/lupa-2.svg" alt="lupa">Buscar</button>
 
         </div>
         <div  class="contRelatedBtn" id="rltBtn">
@@ -75,15 +75,15 @@
         <!-- SEARCH RELATED TAGs BUTTONS #BLUE -->
 
         <div class="relatedTags" id="relatedTags">
-            <button class="searchRtag verMas" id="tag1">#Random 1</button>
-            <button class="searchRtag verMas" id="tag2">#Random 2</button>
-            <button class="searchRtag verMas" id="tag3">#Random 3</button>
+            <!-- <button class="searchRtag verMas" onclick="loadTags()" id="tag1"></button>
+            <button class="searchRtag verMas" onclick="loadTags()" id="tag2"></button>
+            <button class="searchRtag verMas" onclick="loadTags()" id="tag3"></button> -->
             
         </div>
 
         <!-- SECCION SUGERENCIAS DE HOY -->
         <div class="sugerencias">
-            <div class="_boxHeader">
+            <div class="_boxHeader" id="_boxHeader">
                 <p>Hoy te sugerimos:</p>
             </div>
 

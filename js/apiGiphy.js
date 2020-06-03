@@ -106,15 +106,47 @@ trending()
 let contRelatedBtn = document.getElementsByClassName('contRelatedBtn')[0];
 let formLight = document.getElementsByClassName('formLight')[0];
 let valorInput = document.getElementById('explore')
+let searchBtn = document.querySelector('button.botonBuscar');
+let lupa = document.getElementById('lupa')
 
 valorInput.addEventListener('click',() => {
     if(contRelatedBtn.style.display= "none") {
         contRelatedBtn.style.display = "flex";
-        relatedTags.style.display= "none";
+        //relatedTags.style.display= "none";
+        
     }
-
 })
+function actiBtn() {
+    if (valorInput.value.trim() !== "") {
+          searchBtn.removeAttribute('disabled')
+        //  tema claro
+          if (localStorage.getItem("dark") == "true"){
+            searchBtn.color = "#110038"
+            searchBtn.style.backgroundColor= "#F7C9F3";
+            lupa.src = "./images/lupa.svg"; 
+        // tema oscuro
+        } else{
+            searchBtn.color = "#FFFFFF"
+            searchBtn.style.backgroundColor="#EE3EFE";
+            lupa.src = "./images/lupa_light.svg";
+        }
+        
+    } else {
+        searchBtn.setAttribute('disabled', "true");
+        //  tema claro
+        if (localStorage.getItem("dark") == "true"){
+            searchBtn.color = "#B4B4B4"
+            searchBtn.style.backgroundColor="#E6E6E6";
+            lupa.src ="./images/lupa_inactive.svg";
+        // tema oscuro
+     } else{
+            searchBtn.color = "#8F8F8F"
+            searchBtn.style.backgroundColor="#B4B4B4";
+            lupa.src = "./images/lupa-2.svg"; 
 
+     }	            
+    }
+}
 //Evento Enter
 valorInput.addEventListener("keyup",e =>{
     if (event.keyCode === 13) {
@@ -168,19 +200,23 @@ async function results(search) {
         }
     return(arraySearch.data)
 }  
-let searchBtn = document.querySelector('button.botonBuscar');
+
 searchBtn.addEventListener('click', showResults);
 
 let tendenPheader = document.getElementById('pBoxHeader');
 let sugeContent = document.getElementsByClassName('sugerencias')[0];
 let divSearch =  document.getElementById('divSearch_conten');
 let relatedTags = document.getElementById('relatedTags')
+let pBoxHeader = document.getElementById('pBoxHeader')
 
 function showResults() {
+    
     let search = document.getElementById("explore").value.trim();
-    if (search == "") {
-        alert('error: ingrese un criterio para buscar')
-    }
+
+    // if (search == "") {
+    //     alert('error: ingrese un criterio para buscar')        
+    // }
+
     if(contRelatedBtn.style.display = "flex"){
         contRelatedBtn.style.display = "none";
         tendenPheader.innerHTML = 'Resultados de la busqueda';
@@ -192,27 +228,32 @@ function showResults() {
     results(search)
         .then (data => {
             console.log(data);
-            
+            pBoxHeader.innerHTML = 'Resultados para: '+ search
             divSearch.innerHTML = '';
             relatedTags.innerHTML = '';
-            // for (let i = 0; i < 3; i++) {
-                
-            //     let searchRtag = document.createElement('button');
-            //     //searchRtag.setAttribute('href', data[0].images.original.url)
-            //     searchRtag.className = 'searchRtag verMas'
-            //     //searchRtag.onClick = loadtags()
-            //     relatedTags.appendChild(searchRtag);
-                
-            //     let searchRtagText = document.createTextNode('#'+ data[i].title);
-            //     searchRtag.appendChild(searchRtagText); 
-                
-            //     let searchRtag2 = document.getElementsByClassName('searchRtag')
-            //     searchRtag2[i].addEventListener('click', () => {
-            //         alert('hu')
-            //     })
-            // }
+            
+            // const rtag1 = document.getElementById('tag1')
+            // rtag1.textContent = data[0].title
+            // const rtag2 = document.getElementById('tag2')
+            // rtag2.textContent = data[1].title
+            // const rtag3 = document.getElementById('tag3')
+            // rtag3.textContent = data[2].title
+            
+            //  for (let i = 0; i < 3; i++) { 
+            //     relatedTags.innerHTML +=
+            //     `<button class="searchRtag verMas" onclick="loadTags()" id="tags">#${data[i].title}</button>`
 
-          
+            //  }
+
+            for (let i = 0; i < 3; i++) {
+                
+                let searchRtag = document.createElement('button');
+                searchRtag.className = 'searchRtag verMas'
+                relatedTags.appendChild(searchRtag);
+                let searchRtagText = document.createTextNode('#'+ data[i].title);
+                searchRtag.appendChild(searchRtagText); 
+            }
+                      
             for(let i = 0; i<data.length; i++) {
 
                 let pFooter = document.createElement('p');
@@ -235,7 +276,9 @@ function showResults() {
             
                 divSearch.appendChild(divConteGif);
             }
-            //local storage para lo element nuevos producto de la busqueda
+            
+
+            //local storage para los element nuevos producto de la busqueda
             if(localStorage.getItem("dark") == "true") {
                 for (let i = 0; i < headerDark.length; i++) {
                     headerDark[i].style.backgroundImage = 'linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%)'
@@ -251,34 +294,33 @@ function showResults() {
                     btnVerMas[i].style.backgroundColor = '#2E32FB'
                 }
             }
-
+            
         })
         .catch(e => console.log(e))
 }
 //---------------------------TAGS RANDOM-----------------------------------------------
-const rtag1 = document.getElementById('tag1')
-const rtag2 = document.getElementById('tag2')
-const rtag3 = document.getElementById('tag3')
 
-rtag1.addEventListener('click', () => {
-    let searchRlt = document.getElementById("explore")
-    searchRlt.value  = 'graciosos'
-    results(searchRlt)
-    showResults()
-})
 
-rtag2.addEventListener('click', () => {
-    let searchRlt = document.getElementById("explore")
-    searchRlt.value  = 'peliculas'
-    results(searchRlt)
-    showResults()
-})
+// rtag1.addEventListener('click', () => {
+//     let searchRlt = document.getElementById("explore")
+//     searchRlt.value  = 'graciosos'
+//     results(searchRlt)
+//     showResults()
+// })
 
-rtag3.addEventListener('click', () => {
-    let searchRlt = document.getElementById("explore")
-    searchRlt.value  = 'deportes'
-    results(searchRlt)
-    showResults()
-})
+// rtag2.addEventListener('click', () => {
+//     let searchRlt = document.getElementById("explore")
+//     searchRlt.value  = 'peliculas'
+//     results(searchRlt)
+//     showResults()
+// })
+
+// rtag3.addEventListener('click', () => {
+//     let searchRlt = document.getElementById("explore")
+//     searchRlt.value  = 'deportes'
+//     results(searchRlt)
+//     showResults()
+// })
+
 
     
